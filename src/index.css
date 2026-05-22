@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --codecraft-dark: #0a0a0f;
+  --codecraft-dark-1: #12121a;
+  --codecraft-dark-2: #1a1a26;
+  --codecraft-accent-indigo: #6366f1;
+  --codecraft-accent-violet: #8b5cf6;
+  --codecraft-accent-cyan: #06b6d4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--codecraft-dark);
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+::selection {
+  background-color: rgba(99, 102, 241, 0.3);
+  color: #ffffff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--codecraft-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--codecraft-dark-2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--codecraft-accent-indigo);
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-codecraft-dark-1/80 backdrop-blur-xl border border-white/5 rounded-2xl;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-linear bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-linear text-white font-semibold rounded-xl
+           hover:shadow-glow transition-all duration-300 ease-out
+           focus:outline-none focus:ring-2 focus:ring-codecraft-accent-indigo focus:ring-offset-2 focus:ring-offset-codecraft-dark;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 bg-transparent border-2 border-codecraft-accent-indigo text-white font-semibold rounded-xl
+           hover:border-codecraft-accent-violet transition-all duration-300 ease-out
+           focus:outline-none focus:ring-2 focus:ring-codecraft-accent-indigo focus:ring-offset-2 focus:ring-offset-codecraft-dark;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-codecraft-dark-2 border border-white/10 rounded-xl
+           text-white placeholder:text-slate-500
+           focus:outline-none focus:border-codecraft-accent-indigo focus:ring-1 focus:ring-codecraft-accent-indigo
+           transition-all duration-200;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-white;
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .glow-orb {
+    @apply absolute rounded-full blur-3xl opacity-30;
+  }
+
+  .glow-orb-indigo {
+    @apply bg-codecraft-accent-indigo;
+  }
+
+  .glow-orb-violet {
+    @apply bg-codecraft-accent-violet;
+  }
+
+  .glow-orb-cyan {
+    @apply bg-codecraft-accent-cyan;
+  }
+}
+
+@layer utilities {
+  .animate-in {
+    animation: fade-up 0.5s ease-out forwards;
+  }
+
+  .stagger-1 { animation-delay: 100ms; }
+  .stagger-2 { animation-delay: 200ms; }
+  .stagger-3 { animation-delay: 300ms; }
+  .stagger-4 { animation-delay: 400ms; }
+  .stagger-5 { animation-delay: 500ms; }
+}
