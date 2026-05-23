@@ -4,6 +4,7 @@ import { AdminLayout } from '../../components/admin/AdminLayout';
 import { useProjects } from '../../hooks/useData';
 import type { Project, ProjectFormData } from '../../types';
 import { supabase, STORAGE_BUCKET } from '../../lib/supabase';
+import imageCompression from 'browser-image-compression';
 
 const categories = [
   { value: 'web', label: 'Web Development' },
@@ -159,7 +160,8 @@ export function PortfolioPage() {
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 rounded-lg bg-codecraft-dark-2 overflow-hidden flex-shrink-0">
                             {project.thumbnail_url ? (
-                              <img src={project.thumbnail_url} alt="" className="w-full h-full object-cover" />
+                          
+                              <img   src={`${project.thumbnail_url}?width=400&height=300&quality=80`} alt={project.title} />
                             ) : (
                               <div className="w-full h-full bg-gradient-linear opacity-20" />
                             )}
@@ -273,27 +275,35 @@ function ProjectModal({
     }));
   };
 
-  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const file = e.target.files?.[0];
+  if (!file) return;
 
-    setIsUploading(true);
-    try {
-      const fileName = `${Date.now()}-${file.name}`;
-      const { data, error } = await supabase.storage
-        .from(STORAGE_BUCKET)
-        .upload(fileName, file);
+  setIsUploading(true);
+  try {
+    // Compress the image
+    const options = {
+      maxSizeMB: 0.5,        // Max 500KB
+      maxWidthOrHeight: 1200, // Resize to max 1200px
+      useWebWorker: true,
+    };
+    const compressedFile = await imageCompression(file, options);
 
-      if (error) throw error;
+    const fileName = `${Date.now()}-${compressedFile.name}`;
+    const { data, error } = await supabase.storage
+      .from(STORAGE_BUCKET)
+      .upload(fileName, compressedFile);
 
-      const { data: urlData } = supabase.storage.from(STORAGE_BUCKET).getPublicUrl(data.path);
-      setFormData((prev) => ({ ...prev, thumbnail_url: urlData.publicUrl }));
-    } catch {
-      alert('Failed to upload image');
-    } finally {
-      setIsUploading(false);
-    }
-  };
+    if (error) throw error;
+
+    const { data: urlData } = supabase.storage.from(STORAGE_BUCKET).getPublicUrl(data.path);
+    setFormData((prev) => ({ ...prev, thumbnail_url: urlData.publicUrl }));
+  } catch (err) {
+    alert('Failed to upload image: ' + err.message);
+  } finally {
+    setIsUploading(false);
+  }
+};
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
