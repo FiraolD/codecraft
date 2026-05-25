@@ -79,18 +79,7 @@ export function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-20 animate-in stagger-4">
-            {[
-              { value: '50+', label: 'Projects Delivered' },
-              { value: '30+', label: 'Happy Clients' },
-              { value: '5+', label: 'Years Experience' },
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-1">{stat.value}</div>
-                <div className="text-sm text-slate-500">{stat.label}</div>
-              </div>
-            ))}
-          </div>
+       
         </div>
       </div>
 

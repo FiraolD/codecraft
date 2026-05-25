@@ -3,38 +3,7 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 const testimonials = [
-  {
-    id: 1,
-    name: 'Sarah Chen',
-    role: 'CTO',
-    company: 'TechFlow Inc.',
-    quote: 'CodeCraft transformed our outdated system into a modern, scalable platform. Their expertise in both frontend and backend development exceeded our expectations.',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop',
-  },
-  {
-    id: 2,
-    name: 'Marcus Johnson',
-    role: 'Head of Operations',
-    company: 'DataSphere Analytics',
-    quote: 'The AI automation solution they built has reduced our manual workload by 70%. CodeCraft truly understands how to apply technology strategically.',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop',
-  },
-  {
-    id: 3,
-    name: 'Emily Rodriguez',
-    role: 'Product Manager',
-    company: 'CloudScale Solutions',
-    quote: 'Working with CodeCraft felt like having an extension of our own team. They delivered a complex e-commerce platform on time and under budget.',
-    avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop',
-  },
-  {
-    id: 4,
-    name: 'David Park',
-    role: 'Founder',
-    company: 'Innovate Labs',
-    quote: 'Their data engineering expertise helped us build a real-time analytics pipeline that processes millions of events daily. Exceptional work.',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop',
-  },
+  
 ];
 
 export function Testimonials() {
