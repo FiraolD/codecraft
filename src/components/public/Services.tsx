@@ -6,19 +6,19 @@ const services = [
     icon: Monitor,
     title: 'Web & Systems Development',
     description: 'Crafting high-performance web applications and robust systems architecture tailored to your business needs.',
-    features: ['Custom Web Applications', 'API Development', 'System Architecture', 'Cloud Deployment'],
+    features: ['Custom Web Applications', 'API Development', 'System Architecture', 'Responsive Design'],
   },
   {
     icon: Brain,
     title: 'AI Automation',
     description: 'Leveraging cutting-edge AI to automate workflows, enhance decision-making, and unlock new possibilities.',
-    features: ['Machine Learning Models', 'Natural Language Processing', 'Computer Vision', 'Intelligent Automation'],
+    features: ['Machine Learning Models', 'Natural Language Processing', 'Intelligent Automation', 'Predictive Analytics', 'Workflow Automation with n8n and Zapier'],
   },
   {
     icon: Database,
     title: 'Data Engineering & Analytics',
     description: 'Transforming raw data into actionable insights with scalable pipelines and advanced analytics solutions.',
-    features: ['Data Pipelines', 'Business Intelligence', 'Predictive Analytics', 'Data Visualization'],
+    features: ['Data Pipelines', 'Business Intelligence', 'Predictive Analytics', 'Data Visualization', 'Dashboard Development'],
   },
 ];
 
