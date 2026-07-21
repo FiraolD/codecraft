@@ -31,7 +31,7 @@ export function Footer() {
               <a href="https://github.com/FiraolD/" className="p-2 bg-codecraft-dark-2 rounded-lg text-slate-400 hover:text-white hover:bg-codecraft-accent-indigo/20 transition-all duration-200">
                 <Github size={20} />
               </a>
-              <a href="www.linkedin.com/in/firaoldelesa" className="p-2 bg-codecraft-dark-2 rounded-lg text-slate-400 hover:text-white hover:bg-codecraft-accent-indigo/20 transition-all duration-200">
+              <a href="https://www.linkedin.com/in/firaoldelesa" className="p-2 bg-codecraft-dark-2 rounded-lg text-slate-400 hover:text-white hover:bg-codecraft-accent-indigo/20 transition-all duration-200">
                 <Linkedin size={20} />
               </a>
             </div>
