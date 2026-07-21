@@ -122,12 +122,9 @@ export function LoginPage() {
           </form>
 
           {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-codecraft-dark-2 rounded-xl border border-white/5">
+          /*<div className="mt-6 p-4 bg-codecraft-dark-2 rounded-xl border border-white/5">
             <p className="text-xs text-slate-500 text-center mb-2">Demo Credentials</p>
-            <div className="text-xs text-slate-400 space-y-1">
-              <p>Email: admin@codecraft.dev</p>
-              <p>Password: admin123</p>
-            </div>
+            
           </div>
         </div>
       </div>

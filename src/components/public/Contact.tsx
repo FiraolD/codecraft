@@ -195,7 +195,7 @@ export function Contact() {
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Email</div>
                     <a href="mailto:hello@codecraft.dev" className="text-white hover:text-codecraft-accent-indigo transition-colors">
-                      hello@codecraft.dev
+                      firaoldelesa18@gmail.com
                     </a>
                   </div>
                 </div>
@@ -207,7 +207,7 @@ export function Contact() {
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Phone</div>
                     <a href="tel:+1234567890" className="text-white hover:text-codecraft-accent-indigo transition-colors">
-                      +1 (234) 567-890
+                      +251913548797
                     </a>
                   </div>
                 </div>
@@ -218,7 +218,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="text-sm text-slate-500 mb-1">Location</div>
-                    <span className="text-white">San Francisco, CA</span>
+                    <span className="text-white">Addis Ababa, Ethiopia</span>
                   </div>
                 </div>
               </div>
