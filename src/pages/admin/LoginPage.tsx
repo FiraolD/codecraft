@@ -120,12 +120,6 @@ export function LoginPage() {
               )}
             </button>
           </form>
-
-          {/* Demo Credentials */}
-          /*<div className="mt-6 p-4 bg-codecraft-dark-2 rounded-xl border border-white/5">
-            <p className="text-xs text-slate-500 text-center mb-2">Demo Credentials</p>
-            
-          </div>
         </div>
       </div>
     </div>
